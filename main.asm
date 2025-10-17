@@ -3,68 +3,68 @@
 vectors:
 	dc.l	stack&$FFFFFF
 	dc.l	$206
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
 	dc.l	hintjmp&$FFFFFF
-	dc.l	errortrap
+	dc.l	ErrorTrap
 	dc.l	$4284
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
-	dc.l	errortrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
+	dc.l	ErrorTrap
 	dc.b	"SEGA GENESIS    "
 	dc.b	"(C)SEGA 1994.SEP"
 	dc.b	"  - RISTAR -                                    "
@@ -94,10 +94,12 @@ vectors:
 	dc.l	$20202020
 	dc.b	"UE              "
 
-errortrap:
+; ---------------------------------------------------------------------------
+ErrorTrap:
 	nop
 	nop
-	bra.s	errortrap
-	
+	bra.s	ErrorTrap
+
+; ---------------------------------------------------------------------------
 	align	$C8000,255
 	incbin	"sound/ascii.txt"
